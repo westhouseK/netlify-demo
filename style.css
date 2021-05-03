@@ -2,48 +2,64 @@
     .container {
         width: 800px;
         height: 400px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    .container > * {
-        flex: 1 1 auto;
+        display: grid;
+        grid-template-areas:
+        "map text1"
+        "map text2"
+        "map text3"
+        "map button1"
+        "button2 button3";
     }
 
     .map {
         width: 400px;
         height: 400px;
+        grid-area: map;
         background-color: lightcyan;
     }
 
     .text1 {
         width: 400px;
         height: 100px;
+        grid-area: text1;
         background-color: lightskyblue;
     }
 
     .text2 {
         width: 400px;
         height: 100px;
+        grid-area: text2;
         background-color: lightgreen;
     }
 
     .text3 {
         width: 400px;
         height: 100px;
+        grid-area: text3;
         background-color: lightgray;
     }
 
     .button1 {
         width: 400px;
         height: 100px;
+        grid-area: button1;
         background-color: lightskyblue;
     }
-
-    .item2 {
-        display: flex;
+    
+    .button2 {
+        width: 400px;
+        height: 200px;
+        grid-area: button2;
+        background-color: lightgoldenrodyellow;
     }
+
+    .button3 {
+        width: 400px;
+        height: 200px;
+        grid-area: button3;
+        background-color: lightseagreen;
+    }
+
 }
 
 @media screen and (max-width:767px) {
@@ -76,35 +92,31 @@
         order: 3;
     }
 
-    .item1 {
-        order: 5;
-    }
-
-    .item2 {
-        order: 4;
-    }
-
     .text3 {
         width: 400px;
         height: 200px;
         background-color: lightgray;
+        order: 6;
     }
 
     .button1 {
         width: 400px;
         height: 200px;
         background-color: lightskyblue;
+        order: 7;
     }
 
     .button2 {
         width: 400px;
         height: 200px;
         background-color: lightgoldenrodyellow;
+        order: 4;
     }
 
     .button3 {
         width: 400px;
         height: 200px;
         background-color: lightseagreen;
+        order: 5;
     }
 }

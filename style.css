@@ -19,14 +19,30 @@
 
     .text1 {
         width: 400px;
-        height: 200px;
+        height: 100px;
         background-color: lightskyblue;
     }
 
     .text2 {
         width: 400px;
-        height: 200px;
+        height: 100px;
         background-color: lightgreen;
+    }
+
+    .text3 {
+        width: 400px;
+        height: 100px;
+        background-color: lightgray;
+    }
+
+    .button1 {
+        width: 400px;
+        height: 100px;
+        background-color: lightskyblue;
+    }
+
+    .item2 {
+        display: flex;
     }
 }
 
@@ -58,5 +74,37 @@
         height: 200px;
         background-color: lightgreen;
         order: 3;
+    }
+
+    .item1 {
+        order: 5;
+    }
+
+    .item2 {
+        order: 4;
+    }
+
+    .text3 {
+        width: 400px;
+        height: 200px;
+        background-color: lightgray;
+    }
+
+    .button1 {
+        width: 400px;
+        height: 200px;
+        background-color: lightskyblue;
+    }
+
+    .button2 {
+        width: 400px;
+        height: 200px;
+        background-color: lightgoldenrodyellow;
+    }
+
+    .button3 {
+        width: 400px;
+        height: 200px;
+        background-color: lightseagreen;
     }
 }

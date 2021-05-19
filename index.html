@@ -5,20 +5,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>netlify</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .top_container {
+            background-image: url("./153-600x300-grayscale.jpg");
+            background-repeat: no-repeat;
+            height: 300px;
+        }
+        div div {
+            color: aliceblue;
+        }
+
+        .animate1 {
+            animation: left_to_right 1s linear;
+        }
+
+        @keyframes left_to_right {
+            0% {
+            transform: translateX(-10%);
+            }
+            100% {
+            transform: translateX(0px);
+            }
+        }
+
+        .animate2 {
+            animation: right_to_left 1s linear;
+        }
+
+        @keyframes right_to_left {
+            0% {
+            transform: translateX(110%);
+            }
+            100% {
+            transform: translateX(0px);
+            }
+        }
+
+        .animate3 {
+            animation: top_to_bottom 1s linear;
+        }
+
+        @keyframes top_to_bottom {
+            0% {
+            transform: translateX(-10%);
+            }
+            100% {
+            transform: translateX(0px);
+            }
+        }
+
+        .animate4{
+            animation: bottom_to_top 1s linear;
+        }
+
+        @keyframes bottom_to_top {
+            0% {
+            transform: translateX(-10%);
+            }
+            100% {
+            transform: translateX(0px);
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="map">map</div>
-        <div class="text1">text1</div>
-        <div class="text2">text2</div>
-        <div class="text3">text3</div>
-        <div class="button1">button1</div>
-        <div class="button2">button2</div>
-        <div class="button3">button3</div>
+    <div class="top_container">
+        <div id="word1" class="d-none">aaa</div>
+        <div id="word2" class="d-none">bbb</div>
+        <div id="word3" class="d-none">ccc</div>
+        <div id="word4" class="d-none">ddd</div>
+        <div id="word5" class="d-none">eee</div>
+        <div id="word6" class="d-none">logo</div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            const delay = (n) => new Promise( r => setTimeout(r, n*1000));
+            const animate_top = async () => {
+                
+                await $('#word1').removeClass('d-none').addClass('animate1');
+
+                await delay(1);
+
+                await $('#word2').removeClass('d-none').addClass('animate2');
+            
+                await delay(2);
+
+                await $('#word1, #word2').fadeOut(1000);
+                await (() => { 
+                    $('#word3').removeClass('d-none').addClass('animate3');
+                    $('#word4').removeClass('d-none').addClass('animate4');
+                })();
+
+                await delay(2);
+
+                await $('#word4').fadeOut(1000);
+                await $('#word5').removeClass('d-none').fadeIn(1000);
+
+                await delay(2);
+
+                await $('#word3, #word5').fadeOut(1000);
+                await $('#word6').removeClass('d-none').fadeIn(1000);
+            }
+            animate_top();
+        });
+    </script>
 </body>
 
 </html>
